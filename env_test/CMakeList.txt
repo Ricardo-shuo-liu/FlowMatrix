@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.18)
+
+projetc(env_test)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
+
+include_directories($ENV{CONDA_PREFIX}/include)
+link_directories($ENV{CONDA_PREFIX}/lib)
+
+set(CMAKE_BUILD_RPATH "$ENV{CONDA_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH "$ENV{CONDA_PREFIX}/lib")
+set(CMAKE_BUILD_RPATH_USE_ORIGIN ON)
+
+find_package(Armadillo REQUIRED)
+
+add_executable(main_demo arm_test.cc)
+
+target_link_libraries(main_demo
+    ${ARMADILLO_LIBRARIES}
+)

@@ -1,0 +1,4 @@
+{
+    "testMate.cpp.test.executables": "/home/ricaedo/FlowMatrix/build/*/*",
+    "testMate.cpp.test.workingDirectory": "${absDirpath}"
+}
